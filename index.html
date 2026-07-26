@@ -339,6 +339,22 @@ document.addEventListener('DOMContentLoaded', async function() {
     const doc = new DOMParser().parseFromString(template, 'text/html');
     document.documentElement.replaceWith(doc.documentElement);
 
+    const favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/png';
+favicon.href = '/tennisball.png?v=2';
+document.head.appendChild(favicon);
+
+const shortcutIcon = document.createElement('link');
+shortcutIcon.rel = 'shortcut icon';
+shortcutIcon.href = '/tennisball.png?v=2';
+document.head.appendChild(shortcutIcon);
+
+const appleIcon = document.createElement('link');
+appleIcon.rel = 'apple-touch-icon';
+appleIcon.href = '/tennisball.png?v=2';
+document.head.appendChild(appleIcon);
+
     // Resolve page-frame markers: mint this document's own blob for each
     // framed page — from local text when this is the root, otherwise by
     // asking the direct parent over the relay protocol above. An
